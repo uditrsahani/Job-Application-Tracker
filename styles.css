@@ -1,0 +1,23 @@
+body {
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  background-color: #d70000; /* Hitachi Red */
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.table {
+  background-color: white;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
