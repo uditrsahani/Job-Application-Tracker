@@ -1,9 +1,10 @@
 body {
   background-color: #f4f4f4;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 .navbar {
-  background-color: #d70000; /* Hitachi Red */
+  background-color: #d70000!important; /* Hitachi Red */
 }
 
 .navbar-brand {
@@ -20,4 +21,10 @@ h1, h2 {
 
 .table th, .table td {
   vertical-align: middle;
+}
+
+
+.btn-add-job{
+  background-color: #e60027;
+  border: none;
 }
