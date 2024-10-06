@@ -20,4 +20,4 @@ A job application tracker website with a clean and responsive UI built using HTM
 1. Clone the repository.
 2. Open `index.html` in your web browser.
 3. Start tracking your job applications!
-4. The website is live at: 
+4. The website is live at: https://job-application-tracker-rouge.vercel.app/
