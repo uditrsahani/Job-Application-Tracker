@@ -70,5 +70,34 @@ function deleteApplication(index) {
   loadApplications();
 }
 
+// Function to convert applications to CSV format
+function convertToCSV(data) {
+  const headers = ['Job Title', 'Company', 'Status'];
+  const rows = data.map(app => [app.jobTitle, app.company, app.status]);
+
+  const csvContent = [headers, ...rows].map(e => e.join(",")).join("\n");
+  return csvContent;
+}
+
+// Function to download the CSV file
+function downloadCSV(filename, csvContent) {
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.setAttribute('href', url);
+  a.setAttribute('download', filename);
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// Add event listener for the export button
+document.getElementById('exportExcel').addEventListener('click', function () {
+  const applications = JSON.parse(localStorage.getItem('jobApplications')) || [];
+  const csvContent = convertToCSV(applications);
+  downloadCSV('job_applications.csv', csvContent);
+});
+
 // Load applications when the page is initialized
 initializeTracker();
